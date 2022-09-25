@@ -11,9 +11,11 @@ node{
 	stage ('Build'){
 	sh "${mavenhome}/bin/mvn clean package"
 	}
+	/*
 	stage('ExecuteSonarQubeReport'){
 	sh "${mavenhome}/bin/mvn clean sonar:sonar"
 	}
+	*/
 	}//try block closing
 	catch (e){
 	slacknotification(currentBuild.result)
